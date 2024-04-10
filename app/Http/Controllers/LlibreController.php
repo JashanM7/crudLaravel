@@ -12,13 +12,17 @@ class LlibreController extends Controller
 
     public function handleButton(Request $request)
     {
+
         $buttonClicked = $request->input('button');
         
         switch ($buttonClicked) {
+
+            
             case 'llistar':
                 return view("llibre/list");
                 break;
             case 'crear':
+
                 return view("llibre/create");
                 break;
             case 'eliminar':
