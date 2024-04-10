@@ -6,10 +6,10 @@
 
 <h1>Afegir Nou Llibre</h1>
 
-<form action="/guardar-llibre" method="POST">
-    @csrf <!-- Esto es necesario para proteger tu formulario contra ataques CSRF -->
+<form action="/guardar-llibre" class="m-5" method="POST">
+    @csrf 
     <label for="titol">Títol:</label><br>
-    <input type="text" id="titol" name="titol"><br><br>
+    <input class="" type="text" id="titol" name="titol"><br><br>
     
     <label for="autor">Autor:</label><br>
     <input type="text" id="autor" name="autor"><br><br>

@@ -16,7 +16,6 @@ class LlibreController extends Controller
         $buttonClicked = $request->input('button');
         
         switch ($buttonClicked) {
-
             
             case 'llistar':
                 return view("llibre/list");
