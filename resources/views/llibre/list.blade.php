@@ -4,7 +4,7 @@
 
 @section('content')
 
-<table>
+<table class="border border-black mx-auto">
     <thead>
         <tr>
             <th>Titol</th>
@@ -13,6 +13,7 @@
             <th>Editorial</th>
             <th>ISBN</th>
             <th>Categoria</th>
+            <th colspan="2"></th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,8 @@
             <td>{{ $llibre->editorial }}</td>
             <td>{{ $llibre->isbn }}</td>
             <td>{{ $llibre->categoria }}</td>
+            <td>heh</td>
+            <td>oi</td>
         </tr>
         @endforeach
     </tbody>

@@ -3,6 +3,33 @@
 @tailwind utilities;
 
 input{
+    border: 1px solid black;    
+}
+
+th{
+
+    background-color: aquamarine;
+
+}
+
+body{
+    background-color: navajowhite;
+}
+
+table{
+
+
+    background-color: beige;
+}
+
+tr{
     border: 1px solid black; 
-    
+}
+
+th{
+    border: 1px solid black; 
+}
+
+td{
+    border: 1px solid black; 
 }

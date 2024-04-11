@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class LlibreController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view("llibre.index");
     }
 
@@ -15,14 +16,13 @@ class LlibreController extends Controller
     {
 
         $buttonClicked = $request->input('button');
-        
+
         switch ($buttonClicked) {
-            
+
             case 'llistar':
                 return redirect()->route('redirectStoreToList');
                 break;
             case 'crear':
-
                 return view("llibre/create");
                 break;
             case 'eliminar':
@@ -55,22 +55,33 @@ class LlibreController extends Controller
         $llibre->categoria = $request->categoria;
 
         $llibre->save();
-    
+
         return redirect()->route('redirectStoreToList');
     }
 
-    public function goingToLlibreList(){
+    public function goingToLlibreList()
+    {
 
-        $arrayLlibres = Llibre::all();        
+        $arrayLlibres = Llibre::all();
 
         return view("llibre.list")->with([
             "status" => "Llibre creat correctament",
             "llibres" => $arrayLlibres
         ]);
-
     }
 
+    public function destroy($id)
+    {
+        $resource = Llibre::find($id);
 
+        if (!$resource) {
+            return response('Resource not found', 404);
+        }
+
+        $resource->delete();
+
+        return response('Resource deleted successfully');
+    }
 
 
 }
