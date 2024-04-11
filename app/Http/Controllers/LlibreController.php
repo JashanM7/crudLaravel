@@ -56,15 +56,19 @@ class LlibreController extends Controller
 
         $llibre->save();
 
-        return $this->hola();
-
-        //return redirect()->route('llibre.list')->with("status","Llibre creat correctament"); 
-        
+        $arrayLlibres = Llibre::all();        
+    
+        return $this->goingToLlibreList();
     }
 
-    public function hola(){
+    public function goingToLlibreList(){
 
-        dd("bones");
+        $arrayLlibres = Llibre::all();        
+
+        return view("llibre.list")->with([
+            "status" => "Llibre creat correctament",
+            "llibres" => $arrayLlibres
+        ]);
 
     }
 
