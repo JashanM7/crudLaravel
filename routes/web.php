@@ -16,4 +16,6 @@ Route::get('llibre/',[LlibreController::class, 'index']);
 
 Route::get('/process-button', [LlibreController::class, 'handleButton'])->name('processButton');
 
-Route::post('llibre/',[LlibreController::class, 'store']);
+Route::post('llibre/store',[LlibreController::class, 'store']);
+
+Route::get('/second', [LlibreController::class, 'secondMethod'])->name('another.route');
