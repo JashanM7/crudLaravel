@@ -19,14 +19,14 @@
     <tbody>
         @foreach($llibres as $llibre)
         <tr>
-            <td>{{ $llibre->titol }}</td>
+            <td class="" >{{ $llibre->titol }}</td>
             <td>{{ $llibre->autor }}</td>
             <td>{{ $llibre->anypub }}</td>
             <td>{{ $llibre->editorial }}</td>
             <td>{{ $llibre->isbn }}</td>
             <td>{{ $llibre->categoria }}</td>
-            <td>heh</td>
-            <td>oi</td>
+            <td><button class="bg-sky-500 hover:bg-sky-700 px-2 border border-black">Editar</button></td>
+            <td><button class="bg-red-500 hover:bg-red-700 px-2 border border-black">Eliminar</button></td>
         </tr>
         @endforeach
     </tbody>

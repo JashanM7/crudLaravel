@@ -7,9 +7,7 @@ input{
 }
 
 th{
-
     background-color: aquamarine;
-
 }
 
 body{
@@ -18,18 +16,21 @@ body{
 
 table{
 
-
     background-color: beige;
 }
 
 tr{
+
     border: 1px solid black; 
 }
 
 th{
+
     border: 1px solid black; 
 }
 
 td{
+
     border: 1px solid black; 
+    padding: 10px;
 }
