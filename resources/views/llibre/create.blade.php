@@ -4,29 +4,38 @@
 
 @section('content')
 
-<h1>Afegir Nou Llibre</h1>
 
-<form action="/guardar-llibre" class="m-5" method="POST">
-    @csrf 
-    <label for="titol">Títol:</label><br>
-    <input class="" type="text" id="titol" name="titol"><br><br>
-    
-    <label for="autor">Autor:</label><br>
-    <input type="text" id="autor" name="autor"><br><br>
-    
-    <label for="any_publicacio">Any de Publicació:</label><br>
-    <input type="text" id="any_publicacio" name="any_publicacio"><br><br>
-    
-    <label for="editorial">Editorial:</label><br>
-    <input type="text" id="editorial" name="editorial"><br><br>
-    
-    <label for="isbn">ISBN:</label><br>
-    <input type="text" id="isbn" name="isbn"><br><br>
-    
-    <label for="categoria">Categoria:</label><br>
-    <input type="text" id="categoria" name="categoria"><br><br>
-    
-    <input type="submit" value="Afegir Llibre">
-</form>
+    <form action="/store" class="m-5" method="POST">
+
+        <h1 class="text-4xl mb-2">Afegir Nou Llibre</h1>
+
+        @csrf
+        <label for="titol">Títol:</label><br>
+        <input type="text" id="titol" name="titol" class="w-1/6 "><br><br>
+
+        <label for="autor">Autor:</label><br>
+        <input type="text" id="autor" name="autor" class="w-1/6"><br><br>
+
+        <label for="any_publicacio">Any de Publicació (yyyy):</label><br>
+        <input type="text" id="any_publicacio" name="any_publicacio" pattern="\d{4}" maxlength="4" class="w-1/6"><br><br>
+
+        <label for="editorial">Editorial:</label><br>
+        <input type="text" id="editorial" name="editorial" class="w-1/6"><br><br>
+
+        <label for="isbn">ISBN:</label><br>
+        <input type="text" id="isbn" name="isbn" class="w-1/6"><br><br>
+
+        <label for="categoria" class="">Categoria:</label><br>
+        <select id="categoria" name="categoria" class=" border border-black w-1/6 h-7">
+            <option class="" value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select><br><br>
+
+
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit"> Afegir llibre
+        </button>
+    </form>
 
 @endsection
