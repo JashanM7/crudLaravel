@@ -39,7 +39,7 @@ class LlibreController extends Controller
         $credentials = $request->validate([
             "titol" => ["required"],
             "autor" => ["required"],
-            "any" => ["required"],
+            "anypub" => ["required"],
             "editorial" => ["required"],
             "isbn" => ["required"],
             "categoria" => ["required"],
@@ -49,15 +49,23 @@ class LlibreController extends Controller
 
         $llibre->titol = $request->titol;
         $llibre->autor = $request->autor;
-        $llibre->any = $request->any;
+        $llibre->anypub = $request->anypub;
         $llibre->editorial = $request->editorial;
         $llibre->isbn = $request->isbn;
         $llibre->categoria = $request->categoria;
 
         $llibre->save();
 
-        return redirect()->route('llibre.list')->with("status","Llibre creat correctament"); 
+        return $this->hola();
+
+        //return redirect()->route('llibre.list')->with("status","Llibre creat correctament"); 
         
+    }
+
+    public function hola(){
+
+        dd("bones");
+
     }
 
 

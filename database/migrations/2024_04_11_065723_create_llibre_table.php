@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('llibre', function (Blueprint $table) {
+        Schema::create('llibres', function (Blueprint $table) {
             $table->id();
             $table->string('titol');
             $table->string('autor');
-            $table->integer('any');
+            $table->integer('anypub');
             $table->string('editorial');
             $table->string('isbn');
             $table->string('categoria');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('llibre');
+        Schema::dropIfExists('llibres');
     }
 };

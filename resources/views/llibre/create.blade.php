@@ -15,8 +15,8 @@
         <label for="autor">Autor:</label><br>
         <input type="text" id="autor" name="autor" class="w-1/6"><br><br>
 
-        <label for="any">Any de Publicació (yyyy):</label><br>
-        <input type="text" id="any" name="any" pattern="\d{4}" maxlength="4" class="w-1/6"><br><br>
+        <label for="anypub">Any de Publicació (yyyy):</label><br>
+        <input type="text" id="anypub" name="anypub" pattern="\d{4}" maxlength="4" class="w-1/6"><br><br>
 
         <label for="editorial">Editorial:</label><br>
         <input type="text" id="editorial" name="editorial" class="w-1/6"><br><br>

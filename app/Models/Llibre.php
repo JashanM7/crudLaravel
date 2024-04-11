@@ -12,7 +12,7 @@ class Llibre extends Model
     protected $fillable = [
         'titol',
         'autor',
-        'any_publicacio',
+        'anypub',
         'editorial',
         'isbn',
         'categoria',
