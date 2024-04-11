@@ -19,7 +19,7 @@ class LlibreController extends Controller
         switch ($buttonClicked) {
             
             case 'llistar':
-                return view("llibre/list");
+                return redirect()->route('redirectStoreToList');
                 break;
             case 'crear':
 
@@ -55,10 +55,8 @@ class LlibreController extends Controller
         $llibre->categoria = $request->categoria;
 
         $llibre->save();
-
-        $arrayLlibres = Llibre::all();        
     
-        return $this->goingToLlibreList();
+        return redirect()->route('redirectStoreToList');
     }
 
     public function goingToLlibreList(){
