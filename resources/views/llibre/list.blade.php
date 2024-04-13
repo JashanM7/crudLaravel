@@ -3,7 +3,6 @@
 @section('title', 'Create')
 
 @section('content')
-
 <table class="border border-black mx-auto">
     <thead>
         <tr>
@@ -26,7 +25,7 @@
             <td>{{ $llibre->isbn }}</td>
             <td>{{ $llibre->categoria }}</td>
             <td><button class="bg-sky-500 hover:bg-sky-700 px-2 border border-black">Editar</button></td>
-            <td><button class="bg-red-500 hover:bg-red-700 px-2 border border-black">Eliminar</button></td>
+            <td><a href="/llibre/destroy/{{$llibre->id}}"><button class="bg-red-500 hover:bg-red-700 px-2 border border-black">Eliminar</button></a></td>
         </tr>
         @endforeach
     </tbody>

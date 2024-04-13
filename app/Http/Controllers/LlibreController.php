@@ -72,6 +72,7 @@ class LlibreController extends Controller
 
     public function destroy($id)
     {
+
         $resource = Llibre::find($id);
 
         if (!$resource) {
@@ -80,7 +81,7 @@ class LlibreController extends Controller
 
         $resource->delete();
 
-        return response('Resource deleted successfully');
+        return redirect()->route('redirectStoreToList');
     }
 
 

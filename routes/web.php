@@ -18,3 +18,6 @@ Route::get('/process-button', [LlibreController::class, 'handleButton'])->name('
 Route::post('llibre/store',[LlibreController::class, 'store']);
 
 Route::get('llibre/list', [LlibreController::class, 'goingToLlibreList'])->name('redirectStoreToList');
+
+Route::get('llibre/destroy/{id}', [LlibreController::class, 'destroy']);
+

@@ -12,8 +12,7 @@
 
 <a href="{{ route('processButton', ['button' => 'llistar']) }}">Llistar llibre</a>
 <a href="{{ route('processButton', ['button' => 'crear']) }}">Crear llibre</a>
-<a href="{{ route('processButton', ['button' => 'eliminar']) }}">Eliminar llibre</a>
-<a href="{{ route('processButton', ['button' => 'editar']) }}">Editar llibre</a>
+
 
 
 @endsection
