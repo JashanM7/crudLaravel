@@ -65,13 +65,17 @@ class LlibreController extends Controller
 
         $arrayLlibres = Llibre::all();
 
-        $status = Session::get('status');
-
+        if(Session::get('msgFlash')){
+            $msgFlash = Session::get('msgFlash');
+        }else{
+            $msgFlash = null;
+        }
 
         return view("llibre.list")->with([
-            "status" =>  $status,
+            "msgFlash" =>  $msgFlash,
             "llibres" => $arrayLlibres
         ]);
+
     }
 
     public function destroy($id)
@@ -79,7 +83,7 @@ class LlibreController extends Controller
 
         $resource = Llibre::find($id);
 
-        Session::flash('status', 'Llibre eliminat correctament');
+        Session::flash('msgFlash', 'Llibre eliminat correctament');
 
         if (!$resource) {
             return response('Resource not found', 404);
@@ -88,6 +92,48 @@ class LlibreController extends Controller
         $resource->delete();
 
         return redirect()->route('redirectStoreToList');
+    }
+
+    public function goToUpdate($id)
+    {
+        $unLlibre = Llibre::find($id);
+
+        if (!$unLlibre) {
+            return response('Resource not found', 404);
+        }
+
+        return view("llibre.create")->with([
+            "unLlibre" =>  $unLlibre,
+        ]);
+    }
+
+    public function update(Request $request){
+
+        $credentials = $request->validate([
+            "titol" => ["required"],
+            "autor" => ["required"],
+            "anypub" => ["required"],
+            "editorial" => ["required"],
+            "isbn" => ["required"],
+            "categoria" => ["required"],
+        ]);
+
+        $idLlibre = $request->id;
+        $llibre = Llibre::find($idLlibre);
+
+        $llibre->titol = $request->titol;
+        $llibre->autor = $request->autor;
+        $llibre->anypub = $request->anypub;
+        $llibre->editorial = $request->editorial;
+        $llibre->isbn = $request->isbn;
+        $llibre->categoria = $request->categoria;
+
+        $llibre->save();
+
+        Session::flash('msgFlash', 'Llibre actualizat correctament');
+
+        return redirect()->route('redirectStoreToList');
+
     }
 
 

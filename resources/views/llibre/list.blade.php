@@ -4,9 +4,9 @@
 
 @section('content')
 
-@if(session('status'))
+@if(session('msgFlash'))
     <div class="alert alert-success">
-        {{ session('status') }}
+        {{ session('msgFlash') }}
     </div>
 @endif
 
@@ -32,7 +32,7 @@
             <td>{{ $llibre->editorial }}</td>
             <td>{{ $llibre->isbn }}</td>
             <td>{{ $llibre->categoria }}</td>
-            <td><button class="bg-sky-500 hover:bg-sky-700 px-2 border border-black">Editar</button></td>
+            <td><a href="/llibre/update/{{$llibre->id}}"><button class="bg-sky-500 hover:bg-sky-700 px-2 border border-black">Editar</button></a></td>
             <td><a href="/llibre/destroy/{{$llibre->id}}"><button class="bg-red-500 hover:bg-red-700 px-2 border border-black">Eliminar</button></a></td>
         </tr>
         @endforeach
