@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Llibre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class LlibreController extends Controller
 {
@@ -64,8 +65,11 @@ class LlibreController extends Controller
 
         $arrayLlibres = Llibre::all();
 
+        $status = Session::get('status');
+
+
         return view("llibre.list")->with([
-            "status" => "Llibre creat correctament",
+            "status" =>  $status,
             "llibres" => $arrayLlibres
         ]);
     }
@@ -74,6 +78,8 @@ class LlibreController extends Controller
     {
 
         $resource = Llibre::find($id);
+
+        Session::flash('status', 'Llibre eliminat correctament');
 
         if (!$resource) {
             return response('Resource not found', 404);
