@@ -10,7 +10,6 @@
     </div>
 @endif
 
-
 <table class="border border-black mx-auto">
     <thead>
         <tr>

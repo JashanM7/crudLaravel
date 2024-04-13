@@ -19,18 +19,11 @@ class LlibreController extends Controller
         $buttonClicked = $request->input('button');
 
         switch ($buttonClicked) {
-
             case 'llistar':
                 return redirect()->route('redirectStoreToList');
                 break;
             case 'crear':
-                return view("llibre/create");
-                break;
-            case 'eliminar':
-                return view("llibre/destroy");
-                break;
-            case 'editar':
-                return view("llibre/update");
+                return view("llibre.create");
                 break;
         }
     }
