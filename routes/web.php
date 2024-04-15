@@ -18,14 +18,13 @@ Route::get('/process-button', [LlibreController::class, 'handleButton'])->name('
 Route::post('llibre/store',[LlibreController::class, 'store']);
 
 Route::get('llibre/list', [LlibreController::class, 'goingToLlibreList'])->name('redirectStoreToList');
+Route::get('llibre/create', [LlibreController::class, 'goToCreate'])->name('redirectToCreate');
 
 Route::get('llibre/destroy/{id}', [LlibreController::class, 'destroy']);
 
 Route::get('llibre/update/{id}', [LlibreController::class, 'goToUpdate']);
-
 Route::post('/llibre/update', [LlibreController::class, 'update']);
 
 
-Route::get('llibre/create', [LlibreController::class, 'goToCreate'])->name('redirectToCreate');
 
 

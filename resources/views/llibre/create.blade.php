@@ -20,19 +20,40 @@
         <label for="titol">Títol:</label><br>
         <input type="text" id="titol" name="titol" class="w-1/6" value="{{ $unLlibre->titol ?? '' }}"><br><br>
 
+        @error('titol')
+            <div class="text-red-500">Falta el titol</div>
+        @enderror
+
         <label for="autor">Autor:</label><br>
         <input type="text" id="autor" name="autor" class="w-1/6" value="{{ $unLlibre->autor ?? '' }}"><br><br>
+
+        @error('autor')
+            <div class="text-red-500">Falta l'autor</div>
+        @enderror
 
         <label for="anypub">Any de Publicació (yyyy):</label><br>
         <input type="text" id="anypub" name="anypub" pattern="\d{4}" maxlength="4" class="w-1/6"
             value="{{ $unLlibre->anypub ?? '' }}"><br><br>
 
+        @error('anypub')
+            <div class="text-red-500" >Falta l'any</div>
+        @enderror
+
         <label for="editorial">Editorial:</label><br>
         <input type="text" id="editorial" name="editorial" class="w-1/6"
             value="{{ $unLlibre->editorial ?? '' }}"><br><br>
 
+
+            @error('editorial')
+            <div class="text-red-500" >Falta posar l'editorial</div>
+        @enderror
+
         <label for="isbn">ISBN:</label><br>
         <input type="text" id="isbn" name="isbn" class="w-1/6" value="{{ $unLlibre->isbn ?? '' }}"><br><br>
+
+        @error('isbn')
+            <div class="text-red-500">Falta posar l'ISBN</div>
+        @enderror
 
         <label for="categoria">Categoria:</label><br>
         <select id="categoria" name="categoria" class=" border border-black w-1/6 h-7 bg-white">
@@ -49,16 +70,6 @@
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Afegir
             llibre</button>
 
-
-            @if($errors->any())
-            <div class="mt-5">
-                <ul>
-                    @foreach ($error->all() as $error)
-                        <li class="text-red-500">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>     
-            @endif
 
     </form>
 
