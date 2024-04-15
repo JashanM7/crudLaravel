@@ -1,16 +1,16 @@
 @extends('layout.app')
 
-@section('title', 'Create')
+@section('title', 'List')
 
 @section('content')
 
 @if(session('msgFlash'))
-    <div class="alert alert-success">
+    <div class="bg-black text-white font-bold px-4 py-2 shadow-md">
         {{ session('msgFlash') }}
     </div>
 @endif
 
-<table class="border border-black mx-auto">
+<table class="border border-black mt-10 mx-auto">
     <thead>
         <tr>
             <th>Titol</th>

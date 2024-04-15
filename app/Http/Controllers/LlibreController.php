@@ -23,9 +23,13 @@ class LlibreController extends Controller
                 return redirect()->route('redirectStoreToList');
                 break;
             case 'crear':
-                return view("llibre.create");
+                return redirect()->route('redirectToCreate');
                 break;
         }
+    }
+
+    public function goToCreate(){
+        return view("llibre.create");
     }
 
     public function store(Request $request)

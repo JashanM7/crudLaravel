@@ -24,3 +24,8 @@ Route::get('llibre/destroy/{id}', [LlibreController::class, 'destroy']);
 Route::get('llibre/update/{id}', [LlibreController::class, 'goToUpdate']);
 
 Route::post('/llibre/update', [LlibreController::class, 'update']);
+
+
+Route::get('llibre/create', [LlibreController::class, 'goToCreate'])->name('redirectToCreate');
+
+

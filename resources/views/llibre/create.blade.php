@@ -1,6 +1,10 @@
 @extends('layout.app')
 
+@if (!isset($unLlibre))
 @section('title', 'Create')
+@else
+@section('title', 'Editar')
+@endif
 
 @section('content')
 
@@ -9,8 +13,6 @@
     @else
     <form action="/llibre/store" class="m-5" method="POST">
     @endif
-
-    
 
         <h1 class="text-4xl mb-2">Afegir Nou Llibre</h1>
 
@@ -46,6 +48,17 @@
 
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Afegir
             llibre</button>
+
+
+            @if($errors->any())
+            <div class="mt-5">
+                <ul>
+                    @foreach ($error->all() as $error)
+                        <li class="text-red-500">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>     
+            @endif
 
     </form>
 
