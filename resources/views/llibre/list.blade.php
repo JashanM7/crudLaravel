@@ -10,6 +10,8 @@
     </div>
 @endif
 
+@if(count($llibres) != 0)
+
 <table class="border border-black mt-10 mx-auto">
     <thead>
         <tr>
@@ -37,5 +39,11 @@
         @endforeach
     </tbody>
 </table>
+
+@else
+<div>No hi ha cap llibre afegit. Afegeix-ne un!</div>
+@endif
+
+
 
 @endsection
