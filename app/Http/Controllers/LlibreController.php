@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Llibre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
 
 class LlibreController extends Controller
 {

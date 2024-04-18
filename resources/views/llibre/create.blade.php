@@ -21,22 +21,22 @@
         <input type="text" id="titol" name="titol" class="w-1/6" value="{{ $unLlibre->titol ?? '' }} {{ old("titol") }}"><br><br>
 
         @error('titol')
-            <div class="text-red-500">Falta el titol</div>
+            <div class="text-red-500">{{$message}}</div>
         @enderror
 
         <label for="autor">Autor:</label><br>
         <input type="text" id="autor" name="autor" class="w-1/6" value="{{ $unLlibre->autor ?? '' }} {{ old("autor") }}"><br><br>
 
         @error('autor')
-            <div class="text-red-500">Falta l'autor</div>
+            <div class="text-red-500">{{$message}}</div>
         @enderror
 
         <label for="anypub">Any de Publicació (yyyy):</label><br>
-        <input type="text" id="anypub" name="anypub" pattern="\d{4}" maxlength="4" class="w-1/6"
+        <input type="text" id="anypub" name="anypub"  class="w-1/6"
             value="{{ $unLlibre->anypub ?? '' }} {{ old("anypub") }}"><br><br>
 
         @error('anypub')
-            <div class="text-red-500" >Falta l'any</div>
+            <div class="text-red-500" >{{$message}}</div>
         @enderror
 
         <label for="editorial">Editorial:</label><br>
@@ -45,14 +45,14 @@
 
 
             @error('editorial')
-            <div class="text-red-500" >Falta posar l'editorial</div>
+            <div class="text-red-500" >{{$message}}</div>
         @enderror
 
         <label for="isbn">ISBN:</label><br>
         <input type="text" id="isbn" name="isbn" class="w-1/6" value="{{ $unLlibre->isbn ?? '' }} {{ old("isbn") }}"><br><br>
 
         @error('isbn')
-            <div class="text-red-500">Falta posar l'ISBN</div>
+            <div class="text-red-500">{{$message}}</div>
         @enderror
 
         <label for="categoria">Categoria:</label><br>

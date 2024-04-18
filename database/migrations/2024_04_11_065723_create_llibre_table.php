@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('editorial');
             $table->string('isbn');
             $table->string('categoria');
+
+            //$table->foreignId("llibreria_id")->constrained()->onDelete("cascade");
+
             $table->timestamps();
         });
     }
