@@ -18,14 +18,14 @@
 
         @csrf
         <label for="titol">Títol:</label><br>
-        <input type="text" id="titol" name="titol" class="w-1/6" value="{{ $unLlibre->titol ?? '' }} {{ old("titol") }}"><br><br>
+        <input type="text" id="titol" name="titol" class="w-1/6" value="{{ old('titol') ?? ($unLlibre->titol ?? '') }}"><br><br>
 
         @error('titol')
             <div class="text-red-500">{{$message}}</div>
         @enderror
 
         <label for="autor">Autor:</label><br>
-        <input type="text" id="autor" name="autor" class="w-1/6" value="{{ $unLlibre->autor ?? '' }} {{ old("autor") }}"><br><br>
+        <input type="text" id="autor" name="autor" class="w-1/6" value="{{ old('autor') ?? ($unLlibre->autor ?? '') }}"><br><br>
 
         @error('autor')
             <div class="text-red-500">{{$message}}</div>
@@ -33,7 +33,7 @@
 
         <label for="anypub">Any de Publicació (yyyy):</label><br>
         <input type="text" id="anypub" name="anypub"  class="w-1/6"
-            value="{{ $unLlibre->anypub ?? '' }} {{ old("anypub") }}"><br><br>
+        value="{{ old('anypub') ?? ($unLlibre->anypub ?? '') }}"><br><br>
 
         @error('anypub')
             <div class="text-red-500" >{{$message}}</div>
@@ -41,7 +41,7 @@
 
         <label for="editorial">Editorial:</label><br>
         <input type="text" id="editorial" name="editorial" class="w-1/6"
-            value="{{ $unLlibre->editorial ?? '' }} {{ old("editorial") }}"><br><br>
+        value="{{ old('editorial') ?? ($unLlibre->editorial ?? '') }}"><br><br>
 
 
             @error('editorial')
@@ -49,7 +49,7 @@
         @enderror
 
         <label for="isbn">ISBN:</label><br>
-        <input type="text" id="isbn" name="isbn" class="w-1/6" value="{{ $unLlibre->isbn ?? '' }} {{ old("isbn") }}"><br><br>
+        <input type="text" id="isbn" name="isbn" class="w-1/6" value="{{ old('isbn') ?? ($unLlibre->isbn ?? '') }}"><br><br>
 
         @error('isbn')
             <div class="text-red-500">{{$message}}</div>

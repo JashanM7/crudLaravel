@@ -38,7 +38,7 @@ class LlibreController extends Controller
         $credentials = $request->validate([
             "titol" => ["required"],
             "autor" => ["required"],
-            "anypub" => ["required"],
+            "anypub" => ["required", "numeric"],
             "editorial" => ["required"],
             "isbn" => ["required"],
             "categoria" => ["required"],
