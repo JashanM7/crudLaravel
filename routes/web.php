@@ -20,9 +20,9 @@ Route::post('llibre/store',[LlibreController::class, 'store']);
 Route::get('llibre/list', [LlibreController::class, 'goingToLlibreList'])->name('redirectStoreToList');
 Route::get('llibre/create', [LlibreController::class, 'goToCreate'])->name('redirectToCreate');
 
-Route::get('llibre/destroy/{id}', [LlibreController::class, 'destroy']);
+Route::get('llibre/destroy/{id}', [LlibreController::class, 'destroy'])->name("llibre.destroy");
 
-Route::get('llibre/update/{id}', [LlibreController::class, 'goToUpdate']);
+Route::get('llibre/update/{id}', [LlibreController::class, 'goToUpdate'])->name("llibre.edit");
 Route::post('/llibre/update', [LlibreController::class, 'update']);
 
 

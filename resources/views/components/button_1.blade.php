@@ -1,3 +1,1 @@
-<div>
-    <!-- Order your soul. Reduce your wants. - Augustine -->
-</div>
+<a href="{{route("$ruta", ["id" => $id])}}"><button class="bg-{{$color}}-500  hover:bg-{{$color}}-700 px-2 border border-black">{{$text}}</button></a>
