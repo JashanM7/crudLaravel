@@ -27,16 +27,15 @@
     <tbody>
         @foreach($llibres as $llibre)
         <tr>
-            <td class="" >{{ $llibre->titol }}</td>
+            <td>{{ $llibre->titol }}</td>
             <td>{{ $llibre->autor }}</td>
             <td>{{ $llibre->anypub }}</td>
             <td>{{ $llibre->editorial }}</td>
             <td>{{ $llibre->isbn }}</td>
-            <td>{{ $llibre->categoria }}</td>
-            <td><x-button_1 :id="$llibre->id" text="Editar" color="sky" ruta="llibre.edit"/></td>
-            <td><x-button_1 :id="$llibre->id" text="Eliminar" color="red" ruta="llibre.destroy"/></td>
-        
-
+            <td>{{ $llibre->categoria }}</td>     
+            <td><x-button_1 :id="$llibre->id" text="Ventas" color="bg-amber-200" colorHover="hover:bg-amber-800" ruta="redirectToCreate" /></td>
+            <td><x-button_1 :id="$llibre->id" text="Editar" color="bg-sky-500" colorHover="hover:bg-sky-800"  ruta="llibre.edit" /></td>
+            <td><x-button_delete :id="$llibre->id" ruta="llibre.destroy"/></td>
         </tr>
         @endforeach
     </tbody>

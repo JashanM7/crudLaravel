@@ -38,6 +38,11 @@ class Llibre extends Model
 
     */
 
+    public function autor(){
+
+        return $this->belongsTo(User::class);
+    }
+
    
 
 }

@@ -1,1 +1,3 @@
-<a href="{{route("$ruta", ["id" => $id])}}"><button class="bg-{{$color}}-500  hover:bg-{{$color}}-700 px-2 border border-black">{{$text}}</button></a>
+
+<a href="{{route("$ruta", ["id" => $id])}}"><button class="{{$color}} {{$colorHover}} px-2 border border-black">{{$text}}</button></a>
+

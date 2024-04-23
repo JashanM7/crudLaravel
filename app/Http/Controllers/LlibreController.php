@@ -14,11 +14,11 @@ class LlibreController extends Controller
         return view("llibre.index");
     }
 
-    public function handleButton(Request $request)
+    public function navbar(Request $request)
     {
 
         $buttonClicked = $request->input('button');
-
+        
         switch ($buttonClicked) {
             case 'llistar':
                 return redirect()->route('redirectStoreToList');

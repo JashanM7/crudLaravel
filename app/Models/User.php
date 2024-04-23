@@ -44,4 +44,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function llibres(){
+        return $this->hasMany(Llibre::class);
+    }
+
+
+
+
 }
