@@ -34,3 +34,5 @@ Route::get("llibreria/edit",[LlibreriaController::class, "edit"])->name("llibrer
 Route::get("llibreria/update",[LlibreriaController::class, "update"])->name("llibreria.update");
 
 Route::get("llibreria/store",[LlibreriaController::class, "store"])->name("llibreria.store");
+
+Route::get("llibreria/list",[LlibreriaController::class, "list"])->name("llibreria.list");
