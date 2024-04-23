@@ -29,7 +29,10 @@ class LlibreController extends Controller
         }
     }
 
-    public function goToCreate(){
+    public function goToCreate($id){
+
+        dd("La id de la llibreria: " + $id);
+
         return view("llibre.create");
     }
 

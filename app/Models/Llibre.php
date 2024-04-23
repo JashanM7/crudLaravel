@@ -18,31 +18,9 @@ class Llibre extends Model
         'categoria',
     ];
 
-    //1 a m relacions
-
-    /*
-
-
-    a class Mp extends Model
-
-    public function ufs(){
-        return $this->hasMany(Uf::class);
+    public function llibreria(){
+        return $this->belongsTo(Llibreria::class);
     }
 
-    a class Uf extends Model
-
-    public function mp(){
-        return $this->belongsTo(Mp::class);
-    }
-
-
-    */
-
-    public function autor(){
-
-        return $this->belongsTo(User::class);
-    }
-
-   
 
 }

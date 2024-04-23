@@ -9,14 +9,17 @@
 @section('content')
 
     @if (isset($unLlibre))
-    <form action="/llibre/update" class="m-5" method="POST">
+    <form action="{{route("llibre.update")}}" class="m-5" method="POST">
     @else
-    <form action="/llibre/store" class="m-5" method="POST">
+    <form action="{{route("llibre.store")}}" class="m-5" method="POST">
     @endif
 
         <h1 class="text-4xl mb-2">Afegir Nou Llibre</h1>
 
         @csrf
+
+        
+
         <label for="titol">Títol:</label><br>
         <input type="text" id="titol" name="titol" class="w-1/6" value="{{ old('titol') ?? ($unLlibre->titol ?? '') }}"><br><br>
 
@@ -42,7 +45,6 @@
         <label for="editorial">Editorial:</label><br>
         <input type="text" id="editorial" name="editorial" class="w-1/6"
         value="{{ old('editorial') ?? ($unLlibre->editorial ?? '') }}"><br><br>
-
 
             @error('editorial')
             <div class="text-red-500" >{{$message}}</div>

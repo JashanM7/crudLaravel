@@ -21,7 +21,7 @@
             <th>Editorial</th>
             <th>ISBN</th>
             <th>Categoria</th>
-            <th colspan="3"></th>
+            <th colspan="2"></th>
         </tr>
     </thead>
     <tbody>
@@ -34,9 +34,9 @@
             <td>{{ $llibre->isbn }}</td>
             <td>{{ $llibre->categoria }}</td>     
 
-            <td><x-button :id="$llibre->id" text="Ventas" color="bg-amber-200" colorHover="hover:bg-amber-800" ruta="redirectToCreate" /></td>
             <td><x-button :id="$llibre->id" text="Editar" color="bg-sky-500" colorHover="hover:bg-sky-800"  ruta="llibre.edit" /></td>
             <td><x-button_delete :id="$llibre->id" ruta="llibre.destroy"/></td>
+            
         </tr>
         @endforeach
     </tbody>

@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('llibres', function (Blueprint $table) {
+        Schema::create('llibreria', function (Blueprint $table) {
             $table->id();
-            $table->string('titol');
-            $table->string('autor');
-            $table->integer('anypub');
-            $table->string('editorial');
-            $table->string('isbn');
-            $table->string('categoria');
-            $table->foreignId("llibreria_id")->constrained()->onDelete("cascade");
+            $table->string('nom');
+            $table->string('lloc');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('llibres');
+        Schema::dropIfExists('llibreria');
     }
 };
