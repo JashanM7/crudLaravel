@@ -23,7 +23,7 @@ Route::get('llibre/update/{id}', [LlibreController::class, 'goToUpdate'])->name(
 Route::post('/llibre/update', [LlibreController::class, 'update']);
 
 Route::get('/user/create',[UserController::class, 'create'])->name("user.create");
-Route::get("/user/store",[UserController::class, "store"])->name("user.store");
+Route::post("/user/store",[UserController::class, "store"])->name("user.store");
 
 Route::get("/user/login",[UserController::class, "loginGet"])->name("user.login");
 Route::post("/user/login",[UserController::class, "loginPost"])->name("user.login");

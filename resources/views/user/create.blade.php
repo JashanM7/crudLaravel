@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <form action="{{route("user.create")}}" class="m-5" method="POST">
+    <form action="{{route("user.store")}}" class="m-5" method="POST">
 
         <h1 class="text-4xl mb-2">Sign Up </h1>
 
@@ -17,6 +17,13 @@
         <input type="text" id="username" name="username" class="w-1/6"><br><br>
 
         @error('username')
+            <div class="text-red-500">{{$message}}</div>
+        @enderror
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" class="w-1/6"><br><br>
+
+        @error('email')
             <div class="text-red-500">{{$message}}</div>
         @enderror
 

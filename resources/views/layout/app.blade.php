@@ -28,6 +28,7 @@
             </div>
             <ul class="flex space-x-4">
                 <li><a class="p-1 rounded bg-white " href="{{ route('user.create')}}">Sign Up</a></li>
+                <li><a class="p-1 rounded bg-white " href="{{ route('user.login')}}">Log in</a></li>
                 <li><a class="text-white" href="{{ route('navbar', ['button' => 'llistar']) }}">Llistar llibre</a></li>
                 <li><a class="text-white" href="{{ route('navbar', ['button' => 'crear']) }}">Crear llibre</a></li>
             </ul>

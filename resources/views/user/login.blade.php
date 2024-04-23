@@ -8,15 +8,15 @@
 
 @section('content')
 
-    <form action="crearUnUser" class="m-5" method="POST">
+    <form action="{{ route("user.login")}}" class="m-5" method="POST">
 
         <h1 class="text-4xl mb-2">Log in</h1>
 
         @csrf
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" class="w-1/6"><br><br>
+        <label for="name">Username:</label><br>
+        <input type="text" id="name" name="name" class="w-1/6"><br><br>
 
-        @error('username')
+        @error('name')
             <div class="text-red-500">{{$message}}</div>
         @enderror
 

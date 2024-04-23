@@ -17,16 +17,18 @@ class UserController extends Controller
         $credentials = $request->validate([
             "username" => ["required"],
             "password" => ["required"],
+            "email" => ["required"],
         ]);
 
         $user = new User();
 
         $user->name = $request->username;
         $user->password = $request->password;
+        $user->email = $request->email;
 
         $user->save();
 
-        return redirect()->route('redirectToLogin');
+        return redirect()->route('user.login');
     }
 
     public function loginGet(){
@@ -37,7 +39,7 @@ class UserController extends Controller
     public function loginPost(Request $request){
        
         $credentials = $request->validate([
-            "username" => ["required"],
+            "name" => ["required"],
             "password" => ["required"],
         ]);
 
